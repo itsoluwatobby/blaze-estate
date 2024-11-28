@@ -9,7 +9,7 @@ type ImageContainerProps = {
 
 export default function ImageContainer({ source, name, classNames, imageClassNames }: ImageContainerProps) {
   return (
-    <figure className={`rounded maxMobile:w-full flex-none md:w-72 w-1/2 h-80 ${classNames}`}>
+    <figure className={`rounded maxScreen:w-full flex-none md:w-72 w-1/2 h-80 ${classNames}`}>
       <img src={source} alt={name} className={`rounded object-cover w-full h-full ${imageClassNames}`} />
     </figure>
   )

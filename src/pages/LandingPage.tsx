@@ -1,10 +1,12 @@
 // import { useAppContext } from "../hooks";
-
 import {
   Header,
   Hero,
   CallToAction,
   Rooms,
+  Gallery,
+  Slides,
+  Footer,
 } from "../components/landingPage";
 
 export default function LandingPage() {
@@ -16,6 +18,9 @@ export default function LandingPage() {
       <Hero />
       <CallToAction />
       <Rooms />
+      <Gallery />
+      <Slides />
+      <Footer />
     </div>
   )
 }

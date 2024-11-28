@@ -4,6 +4,7 @@ type CurrencyType = 'EURO' | 'NAIRA' | 'DOLLAR';
 
 type Theme = 'light' | 'dark'
 type AppContextProps = {
+  appName: string;
   theme: Theme;
   setTheme: React.Dispatch<React.SetStateAction<Theme>>;
 }

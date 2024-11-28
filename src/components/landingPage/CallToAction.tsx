@@ -9,25 +9,25 @@ export default function CallToAction() {
     { checkIn: '', checkOut: '', guests: '' }
   )
   return (
-    <section className='w-full flex flex-col px-14 py-16 maxMobile:px-5 maxMobile:py-8 gap-y-20'>
+    <section className='w-full flex flex-col px-20 py-16 maxMobile:px-5 maxMobile:py-8 gap-y-20'>
 
       <div className='w-full flex items-center gap-x-8 gap-y-4 justify-between flex-wrap'>
         <InputBox
           name={'Check In'} 
           type={"date"}
-          key={'checkIn'}
+          keyProp={'checkIn'}
           value={inputs.checkIn}
           handleChange={setInputs}
         />
         <InputBox
           name={'Check Out'} 
           type={"date"}
-          key={'checkOut'}
+          keyProp={'checkOut'}
           value={inputs.checkOut}
           handleChange={setInputs}
         />
 
-        <div className='flex flex-col gap-1 text-sm w-64 maxMobile:w-full'>
+        <div className='flex flex-col gap-1 text-sm w-56 maxMobile:w-full'>
           <label htmlFor={'room'} className='font-medium'>Room</label>
 
           <select name="room" id=""
@@ -42,17 +42,15 @@ export default function CallToAction() {
         <InputBox
           name={'Guests'} 
           type={"text"}
-          key={'guests'}
+          keyProp={'guests'}
           placeholder='number of guests'
           value={inputs.guests}
           handleChange={setInputs}
         />
       </div>
 
-      <div className='flex items-center justify-between maxMobile:flex-col gap-8'>
-        {/* <figure className='rounded maxMobile:w-full flex-none md:w-72 w-1/2 h-80'>
-          <img src={LightHouse} alt="Light house" className='rounded object-cover w-full h-full' />
-        </figure> */}
+      <div className='flex items-center justify-between maxScreen:flex-col gap-10'>
+
         <ImageContainer 
           source={LightHouse}
           name='Light box'

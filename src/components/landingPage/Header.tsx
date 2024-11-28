@@ -1,14 +1,17 @@
+import { useAppContext } from "../../hooks";
 import { NavigationNames } from "../../utils";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 export default function Header() {
+  const { appName } = useAppContext();
 
   return (
     <header className="sticky z-50 bg-white w-full top-0 shadow-sm py-3 px-7 flex justify-between h-14 items-center">
 
-      <h1 className="font-semibold text-base">Blazer</h1>
+      <h1 className="font-semibold text-base">{appName}</h1>
 
-      <div className="flex items-center gap-x-3 text-[13px] font-medium">
-        <div className="self-en flex items-center gap-x-2 font-medium">
+      <div className="hidden md:flex items-center gap-x-3 text-[13px] font-medium">
+        <div className="self-en flex items-center gap-x-4 font-medium">
           {
             Object.values(NavigationNames).map((nav) => (
               <TabName key={nav} name={nav} />
@@ -23,6 +26,10 @@ export default function Header() {
           Get Started
         </button>
       </div>
+
+      <button className="hidden midScreen:block focus:outline-none">
+        <GiHamburgerMenu className={`text-3xl`} />
+      </button>
 
     </header>
   )

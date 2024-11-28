@@ -1,10 +1,12 @@
 import { createContext, useState } from 'react';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const AppContext = createContext<AppContextProps | null>(null);
 
 export const AppContextDataProvider = (
   { children }: { children: React.ReactNode },
 ) => {
+  const [appName] = useState('Blazer');
   const [theme, setTheme] = useState<Theme>(
     window.matchMedia
       && window.matchMedia(
@@ -13,7 +15,7 @@ export const AppContextDataProvider = (
   );
   
   const value = {
-    theme, setTheme,
+    theme, setTheme, appName,
   };
 
   return (
