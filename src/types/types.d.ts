@@ -2,6 +2,8 @@
 
 type CurrencyType = 'EURO' | 'NAIRA' | 'DOLLAR';
 
+type ScrollDirection = 'left' | 'right'
+
 type Theme = 'light' | 'dark'
 type AppContextProps = {
   appName: string;
@@ -24,4 +26,16 @@ type Inputs = {
   checkIn: string,
   checkOut: string,
   guests: string,
+}
+
+type NavProps = {
+  name: string;
+  link: string;
+}
+
+type SocialProps = {
+  id: number;
+  Icon: IconType;
+  link: string;
+  name: string;
 }

@@ -8,7 +8,9 @@ import ImageContainer from '../ImageContainer';
 export default function Gallery() {
 
   return (
-    <section className='flex w-full flex-col transition-all px-20 py-20 maxMobile:px-5 maxMobile:py-8 gap-y-2'>
+    <section 
+    id='#gallery'
+    className='flex w-full flex-col transition-all px-20 py-20 maxMobile:px-5 maxMobile:py-8 gap-y-2'>
       <div className='flex flex-col gap-y-2 items-center'>
         <small className='font-semibold text-2xl'>Gallery</small>
         <p className='text-xs'>Lorem ipsum dokr alt amel, consectetur elit.</p>

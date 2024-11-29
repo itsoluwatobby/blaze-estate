@@ -4,7 +4,7 @@ import CallToAction from './CallToAction';
 import Rooms from './Rooms';
 import Gallery from './Gallery';
 import Slides from './Slides';
-import Footer from './Footer';
+import Footer from './footer/Footer';
 
 export {
   Header,

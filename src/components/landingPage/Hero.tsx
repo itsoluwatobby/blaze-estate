@@ -3,7 +3,9 @@ import { setCustomBackgroundImage } from '../../utils/styles';
 
 export default function Hero() {
   return (
-    <section>
+    <section
+    id='#home'
+    >
       <div
       style={setCustomBackgroundImage(
         HeroImage,

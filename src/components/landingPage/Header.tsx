@@ -43,8 +43,8 @@ type TabNameProp = {
 const TabName = ({ name }: TabNameProp) => {
 
   return (
-    <button className="focus:outline-none outline-0 focus:ring-0 focus:border-b focus:font-semibold hover:border-b transition-all">
+    <a href={`#${name.toLowerCase()}`} className="focus:outline-none outline-0 focus:ring-0 focus:border-b cursor-pointer focus:font-semibold hover:border-b transition-all">
       {name}
-    </button>
+    </a>
   );
 }
