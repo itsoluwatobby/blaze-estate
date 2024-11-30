@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import InputBox from './InputBox'
-import LightHouse from '../../assets/Lightbox1.png';
+import LightHouse from '../../assets/lightbox1.png';
 import { ImageContainer } from '..';
 
 export default function CallToAction() {
