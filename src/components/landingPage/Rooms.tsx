@@ -3,7 +3,7 @@ import Room2 from '../../assets/room/room2.png'
 import Room3 from '../../assets/room/room3.png'
 import Room4 from '../../assets/room/room4.png'
 import Room6 from '../../assets/room/room6.png'
-import LightBox from '../../assets/lightbox2.png'
+import LightBox from '../../assets/Lightbox2.png'
 import { helper } from '../../utils'
 
 import RoomDetails from './RoomDetails'
