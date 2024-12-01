@@ -12,7 +12,7 @@ type InputBoxProps = {
 
 export default function InputBox({ type, name, keyProp, value, placeholder, handleChange, classNames }: InputBoxProps) {
   return (
-    <div className='flex flex-col gap-1 text-sm w-56 maxMobile:w-full'>
+    <div className='flex flex-col gap-1 text-sm w-56 maxScreen:w-full'>
       <label htmlFor={name} className='font-medium'>{name}</label>
       <input
         type={type}

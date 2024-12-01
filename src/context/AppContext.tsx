@@ -7,6 +7,7 @@ export const AppContextDataProvider = (
   { children }: { children: React.ReactNode },
 ) => {
   const [appName] = useState('Blazer');
+  const [toggleModal, setToggleModal] = useState(false);
   const [theme, setTheme] = useState<Theme>(
     window.matchMedia
       && window.matchMedia(
@@ -15,7 +16,7 @@ export const AppContextDataProvider = (
   );
   
   const value = {
-    theme, setTheme, appName,
+    theme, setTheme, appName, toggleModal, setToggleModal,
   };
 
   return (

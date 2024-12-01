@@ -15,7 +15,7 @@ export default function Rooms() {
 
   return (
     <section 
-    id='#about'
+    id='about'
     className='flex w-full flex-col transition-all px-20 py-20 maxMobile:px-5 maxMobile:py-8 gap-y-10'>
       <div className='flex flex-col gap-y-2 items-center'>
         <small className='font-medium'>Rooms</small>

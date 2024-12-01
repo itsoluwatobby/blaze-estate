@@ -9,51 +9,61 @@ export default function CallToAction() {
     { checkIn: '', checkOut: '', guests: '' }
   )
   return (
-    <section className='w-full flex flex-col px-20 py-16 maxMobile:px-5 maxMobile:py-8 gap-y-20'>
+    <section  
+    className='w-full flex flex-col px-16 py-16 maxMobile:px-5 maxMobile:py-8 gap-y-20'>
 
-      <div className='w-full flex items-center gap-x-8 gap-y-4 justify-between flex-wrap'>
-        <InputBox
-          name={'Check In'} 
-          type={"date"}
-          keyProp={'checkIn'}
-          value={inputs.checkIn}
-          handleChange={setInputs}
-        />
-        <InputBox
-          name={'Check Out'} 
-          type={"date"}
-          keyProp={'checkOut'}
-          value={inputs.checkOut}
-          handleChange={setInputs}
-        />
+      <article className='w-full flex flex-col items-center gap-8'>
+        <div className='w-full flex items-center gap-x-8 gap-y-4 justify-between flex-wrap'>
+          <InputBox
+            name='Check In'
+            type='date'
+            keyProp='checkIn'
+            value={inputs.checkIn}
+            handleChange={setInputs}
+          />
+          <InputBox
+            name='Check Out'
+            type='date'
+            keyProp='checkOut'
+            value={inputs.checkOut}
+            handleChange={setInputs}
+          />
 
-        <div className='flex flex-col gap-1 text-sm w-56 maxMobile:w-full'>
-          <label htmlFor={'room'} className='font-medium'>Room</label>
+          <div className='flex flex-col gap-1 text-sm w-56 maxScreen:w-full'>
+            <label htmlFor={'room'} className='font-medium'>Room</label>
 
-          <select name="room" id=""
-          className='border border-gray-400 rounded focus:outline-none focus:ring-0 placeholder:text-gray-400 p-2 text-xs w-full'
-          >
-            <option value="Executive">Executive</option>
-            <option value="Regular">Regular</option>
-            <option value="VIP">VIP</option>
-          </select>
+            <select name="room" id=""
+              className='border border-gray-400 rounded focus:outline-none focus:ring-0 placeholder:text-gray-400 p-2 text-xs w-full'
+            >
+              <option value="Executive">Executive</option>
+              <option value="Regular">Regular</option>
+              <option value="VIP">VIP</option>
+            </select>
+          </div>
+
+          <InputBox
+            name='Guests'
+            type='number'
+            keyProp='guests'
+            placeholder='number of guests'
+            value={inputs.guests}
+            handleChange={setInputs}
+          />
+
         </div>
+        
+        <button className='self-center bg-black text-white focus:outline-none border rounded text-xs h-9 px-6 whitespace-nowrap maxScreen:w-full font-medium'>
+          Check Availability
+        </button>
+      </article>
 
-        <InputBox
-          name={'Guests'} 
-          type={"text"}
-          keyProp={'guests'}
-          placeholder='number of guests'
-          value={inputs.guests}
-          handleChange={setInputs}
-        />
-      </div>
+      <div className='flex items-center justify-between maxScreen:flex-col gap-10 gap-x-6'>
 
-      <div className='flex items-center justify-between maxScreen:flex-col gap-10'>
-
-        <ImageContainer 
+        <ImageContainer
           source={LightHouse}
           name='Light box'
+          classNames='h-52 midScreen:h-72 md:w-[50%] wfull'
+          imageClassNames='none'
         />
 
         <div className='flex flex-col gap-y-4'>
@@ -71,6 +81,7 @@ export default function CallToAction() {
           </div>
         </div>
       </div>
+  
     </section>
   )
 }

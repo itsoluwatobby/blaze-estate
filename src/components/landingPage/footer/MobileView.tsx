@@ -16,7 +16,7 @@ export default function MobileView(
     <div className='hidden midScreen:flex flex-col w-full items-center gap-6'>
         <h2 className='font-bold'>{appName}</h2>
         
-        <div className='flex items-center w-full text-xs font-semibold justify-between'>
+        <div className='flex items-center w-full text-xs font-semibold justify-between px-2'>
           {
             NavigationRoutes.map((route) => (
               <a key={route.name}

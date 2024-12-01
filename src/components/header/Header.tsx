@@ -1,20 +1,23 @@
 import { useAppContext } from "../../hooks";
 import { NavigationNames } from "../../utils";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { TabName } from "./TabName";
+// import { Modal } from "./Modal";
+// import { useRef } from "react";
 
 export default function Header() {
-  const { appName } = useAppContext();
+  const { appName, setToggleModal } = useAppContext();
 
   return (
-    <header className="sticky z-50 bg-white w-full top-0 shadow-sm py-3 px-7 flex justify-between h-14 items-center">
+    <header className="sticky z-50 bg-white w-full top-0 shadow-sm pt-5 pb-3 px-7 maxMobile:px-4 flex justify-between items-center">
 
       <h1 className="font-semibold text-base">{appName}</h1>
 
       <div className="hidden md:flex items-center gap-x-3 text-[13px] font-medium">
         <div className="self-en flex items-center gap-x-4 font-medium">
           {
-            Object.values(NavigationNames).map((nav) => (
-              <TabName key={nav} name={nav} />
+            NavigationNames.map((nav) => (
+              <TabName key={nav.name} nav={nav} />
             ))
           }
         </div>
@@ -27,24 +30,12 @@ export default function Header() {
         </button>
       </div>
 
-      <button className="hidden midScreen:block focus:outline-none">
-        <GiHamburgerMenu className={`text-3xl`} />
+      <button 
+      onClick={() => setToggleModal((prev) => !prev)}
+      className="hidden midScreen:block focus:outline-none">
+        <GiHamburgerMenu className={`text-2xl`} />
       </button>
 
     </header>
   )
-}
-
-
-type TabNameProp = {
-  name: string;
-}
-
-const TabName = ({ name }: TabNameProp) => {
-
-  return (
-    <a href={`#${name.toLowerCase()}`} className="focus:outline-none outline-0 focus:ring-0 focus:border-b cursor-pointer focus:font-semibold hover:border-b transition-all">
-      {name}
-    </a>
-  );
 }

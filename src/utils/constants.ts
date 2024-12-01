@@ -10,9 +10,23 @@ export enum TransactionStatus {
   Success = 'Success',
 }
 
-export const NavigationNames = {
-  Home: 'Home',
-  About: 'About',
-  Services: 'Services',
-  Gallery: 'Gallery',
-} as const;
+export const NavigationNames = [
+  { name: 'Home', link: '#home' },
+  { name: 'About', link: '#about' },
+  { name: 'Services', link: '#services' },
+  { name: 'Gallery', link: '#gallery' },
+] as const;
+
+export const NavigationRoutes = [
+  { name: 'About', link: '#about' },
+  { name: 'Services', link: '#services' },
+  { name: 'Profile', link: '#profile' },
+  { name: 'Gallery', link: '#gallery' },
+  { name: 'Contact', link: '#contact' },
+];
+
+export const ActionRoutes = [
+  { name: 'Privacy Policy', link: '#privacy' },
+  { name: 'Terms of Services', link: '#termsOfServices' },
+  { name: 'Cookies Settings', link: '#cookiesSettings' },
+];

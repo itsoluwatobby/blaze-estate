@@ -1,10 +1,15 @@
 import HeroImage from '../../assets/hero.jpg';
 import { setCustomBackgroundImage } from '../../utils/styles';
 
-export default function Hero() {
+type HomeProps = {
+  observerRef: React.LegacyRef<HTMLDivElement>
+}
+export default function Hero({ observerRef }: HomeProps) {
+  
   return (
     <section
-    id='#home'
+    id='home'
+    ref={observerRef}
     >
       <div
       style={setCustomBackgroundImage(

@@ -8,9 +8,9 @@ import ImageContainer from '../ImageContainer';
 export default function Gallery() {
 
   return (
-    <section 
-    id='#gallery'
-    className='flex w-full flex-col transition-all px-20 py-20 maxMobile:px-5 maxMobile:py-8 gap-y-2'>
+    <section
+      id='gallery'
+      className='flex w-full flex-col transition-all px-20 py-20 maxMobile:px-5 maxMobile:py-8 gap-y-2'>
       <div className='flex flex-col gap-y-2 items-center'>
         <small className='font-semibold text-2xl'>Gallery</small>
         <p className='text-xs'>Lorem ipsum dokr alt amel, consectetur elit.</p>
@@ -49,10 +49,10 @@ export default function Gallery() {
         </div>
 
       </div>
-        
-        <button className='self-center border-gray-400 focus:outline-none border rounded text-[10px] w-20 h-8 px-1.5 whitespace-nowrap maxScreen:w-full font-medium'>
-          View more
-        </button>
+
+      <button className='self-center border-gray-400 focus:outline-none border rounded text-xs h-9 px-4 whitespace-nowrap maxScreen:w-full font-medium'>
+        View more
+      </button>
 
     </section>
   )

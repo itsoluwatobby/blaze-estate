@@ -43,7 +43,7 @@ export default function RoomDetails(
           <button className={`border-gray-400 focus:outline-none border rounded text-[10px] h-8 px-1.5 whitespace-nowrap ${containerClass?.buttonClass}`}>
             {CURRENCY.DOLLAR}{price}/Night
           </button>
-          <button className={`focus:outline-none rounded flex items-center gap-x-0.5 text-[10px] h-8 px-1.5 whitespace-nowrap ${containerClass?.buttonClass}`}>
+          <button className={`focus:outline-none rounded flex items-center gap-x-0.5 text-[11px] h-8 px-1.5 whitespace-nowrap ${containerClass?.buttonClass}`}>
             <span>view room</span>
             <MdKeyboardArrowRight className='text-xl' />
           </button>
