@@ -1,12 +1,12 @@
 import { useAppContext } from "../../hooks";
 import { NavigationNames } from "../../utils";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { RiMenuFill, RiMenu4Fill } from "react-icons/ri";
 import { TabName } from "./TabName";
 // import { Modal } from "./Modal";
 // import { useRef } from "react";
 
 export default function Header() {
-  const { appName, setToggleModal } = useAppContext();
+  const { appName, toggleModal, setToggleModal } = useAppContext();
 
   return (
     <header className="sticky z-50 bg-white w-full top-0 shadow-sm pt-5 pb-3 px-7 maxMobile:px-4 flex justify-between items-center">
@@ -32,8 +32,13 @@ export default function Header() {
 
       <button 
       onClick={() => setToggleModal((prev) => !prev)}
-      className="hidden midScreen:block focus:outline-none">
-        <GiHamburgerMenu className={`text-2xl`} />
+      className="hidden transition-transform midScreen:block focus:outline-none">
+        {
+          toggleModal ?
+          <RiMenu4Fill className={`text-2xl`} />
+          :
+          <RiMenuFill className={`text-2xl`} />
+        }
       </button>
 
     </header>

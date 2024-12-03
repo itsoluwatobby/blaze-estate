@@ -24,10 +24,12 @@ type User = {
 
 type InputType = 'text' | 'number' | 'checkbox' | 'numeric' | 'date'
 
+type RoomLevel = 'Executive' | 'Regular' | 'VIP';
 type Inputs = {
   checkIn: string,
   checkOut: string,
   guests: string,
+  room: RoomLevel;
 }
 
 type NavProps = {

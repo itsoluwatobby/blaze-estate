@@ -7,7 +7,7 @@ export const Modal = () => {
 
   return (
     <section
-      className={`md:hidden ${toggleModal ? 'fixed' : 'hidden'} w-fit right-0 z-10 bg-white p-5 flex flex-col focus:border-0 focus:outline-none items-center gap-6 shadow-md rounded-tl-md rounded-br-md text-xs`}>
+      className={`md:hidden ${toggleModal ? 'fixed' : 'hidden'} w-fit right-0 z-10 bg-white p-5 flex flex-col focus:border-0 focus:outline-none items-center gap-6 shadow-md rounded-tl-md rounded-br-md transition-transform text-xs`}>
 
       <div className="flex flex-col items-center gap-4 font-medium">
         {

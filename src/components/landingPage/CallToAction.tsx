@@ -1,13 +1,32 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react'
 import InputBox from './InputBox'
 import LightHouse from '../../assets/lightbox1.png';
 import { ImageContainer } from '..';
+import toast from 'react-hot-toast';
+
+const initInputs = {
+  checkIn: '',
+  checkOut: '',
+  guests: '',
+  room: 'Executive' as RoomLevel,
+};
 
 export default function CallToAction() {
 
-  const [inputs, setInputs] = useState<Inputs>(
-    { checkIn: '', checkOut: '', guests: '' }
-  )
+  const [inputs, setInputs] = useState<Inputs>(initInputs);
+
+  const canSubmit = [...Object.values(inputs)].every(Boolean);
+
+  const submitForm = () => {
+    try {
+      if (!canSubmit) return;
+      setInputs(initInputs);
+      toast.success('Room available');
+    } catch (err: any) {
+      toast.error('Network error', err.message);
+    }
+  }
   return (
     <section  
     className='w-full flex flex-col px-16 py-16 maxMobile:px-5 maxMobile:py-8 gap-y-20'>
@@ -33,6 +52,7 @@ export default function CallToAction() {
             <label htmlFor={'room'} className='font-medium'>Room</label>
 
             <select name="room" id=""
+              onChange={e => setInputs((prev) => ({ ...prev, room: e.target.value as RoomLevel }))}
               className='border border-gray-400 rounded focus:outline-none focus:ring-0 placeholder:text-gray-400 p-2 text-xs w-full'
             >
               <option value="Executive">Executive</option>
@@ -52,7 +72,9 @@ export default function CallToAction() {
 
         </div>
         
-        <button className='self-center bg-black text-white focus:outline-none border rounded text-xs h-9 px-6 whitespace-nowrap maxScreen:w-full font-medium'>
+        <button 
+        onClick={submitForm}
+        className='self-center bg-black text-white focus:outline-none border rounded text-xs h-9 px-6 whitespace-nowrap maxScreen:w-full font-medium'>
           Check Availability
         </button>
       </article>
